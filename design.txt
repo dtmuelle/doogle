@@ -1,0 +1,86 @@
+
+
+Classes
+	controllers:
+		definitions 
+			get(word)
+				entry presenter // 200
+				nothing // 404
+
+	components:
+		entry presenter
+			definitions
+				definition
+
+	models:
+		entry
+			id
+			word
+			definitions
+		
+		definition
+			id
+			entry_id
+			text
+		
+	
+
+Schema
+	entry
+		id		int
+		word		varchar(512)
+		index(word)
+	
+	definition
+		id		int
+		entry_id 	int
+		text		text
+		fk(entry_id)
+
+
+Implementation Outline
+	controllers:
+		definitions 
+			get(word)
+				// find entry by word
+				// if no word
+					// look up word via dictionary API
+					// if found
+						create word
+				// if word
+					// return entry presenter 
+				// else
+					// 404
+
+	components:
+		entry presenter
+			definitions
+				definition
+
+		dictionary api client
+			connection
+			credentials
+
+	models:
+		entry
+			id
+			word
+			definitions
+		
+		definition
+			id
+			entry_id
+			text
+
+
+
+
+
+
+
+
+
+
+
+
+
