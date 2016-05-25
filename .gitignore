@@ -1,0 +1,8 @@
+/doogle/.bundle
+/doogle/db/*.sqlite3
+/doogle/db/*.sqlite3-journal
+/doogle/log/*
+!/doogle/log/.keep
+/doogle/tmp
+*.swp
+/doogle/.idea
